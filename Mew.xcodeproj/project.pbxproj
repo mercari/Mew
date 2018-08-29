@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D279A3072136B34E007B045A /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3062136B34E007B045A /* Instantiatable.swift */; };
+		D279A30A2136B357007B045A /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3082136B357007B045A /* Injectable.swift */; };
+		D279A30B2136B357007B045A /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3092136B357007B045A /* Interactable.swift */; };
+		D279A30E2136B365007B045A /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A30C2136B365007B045A /* ContainerView.swift */; };
+		D279A3102136B36F007B045A /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A30F2136B36F007B045A /* Container.swift */; };
+		D279A3132136B3BA007B045A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D279A3122136B3BA007B045A /* UIKit.framework */; };
+		D279A3152136B579007B045A /* ContainerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3142136B579007B045A /* ContainerViewTests.swift */; };
+		D279A3172136B5AB007B045A /* Supports.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3162136B5AB007B045A /* Supports.swift */; };
+		D279A3182136B5F9007B045A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D279A3122136B3BA007B045A /* UIKit.framework */; };
+		D279A3192136B726007B045A /* _ContainerInterfaceBuilderView.xib in Sources */ = {isa = PBXBuildFile; fileRef = D279A30D2136B365007B045A /* _ContainerInterfaceBuilderView.xib */; };
+		OBJ_41 /* Mew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Mew::Mew::Product" /* Mew.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D279A3022136B30C007B045A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Mew::Mew";
+			remoteInfo = Mew;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D279A3062136B34E007B045A /* Instantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
+		D279A3082136B357007B045A /* Injectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
+		D279A3092136B357007B045A /* Interactable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactable.swift; sourceTree = "<group>"; };
+		D279A30C2136B365007B045A /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		D279A30D2136B365007B045A /* _ContainerInterfaceBuilderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _ContainerInterfaceBuilderView.xib; sourceTree = "<group>"; };
+		D279A30F2136B36F007B045A /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		D279A3122136B3BA007B045A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D279A3142136B579007B045A /* ContainerViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewTests.swift; sourceTree = "<group>"; };
+		D279A3162136B5AB007B045A /* Supports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supports.swift; sourceTree = "<group>"; };
+		"Mew::Mew::Product" /* Mew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Mew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Mew::MewTests::Product" /* MewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = MewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				D279A3132136B3BA007B045A /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				D279A3182136B5F9007B045A /* UIKit.framework in Frameworks */,
+				OBJ_41 /* Mew.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D279A3042136B31A007B045A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D279A3062136B34E007B045A /* Instantiatable.swift */,
+				D279A3082136B357007B045A /* Injectable.swift */,
+				D279A3092136B357007B045A /* Interactable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D279A3052136B31F007B045A /* ContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				D279A30F2136B36F007B045A /* Container.swift */,
+				D279A30D2136B365007B045A /* _ContainerInterfaceBuilderView.xib */,
+				D279A30C2136B365007B045A /* ContainerView.swift */,
+			);
+			path = ContainerView;
+			sourceTree = "<group>";
+		};
+		D279A3112136B3BA007B045A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D279A3122136B3BA007B045A /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		OBJ_10 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* MewTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_11 /* MewTests */ = {
+			isa = PBXGroup;
+			children = (
+				D279A3162136B5AB007B045A /* Supports.swift */,
+				D279A3142136B579007B045A /* ContainerViewTests.swift */,
+			);
+			name = MewTests;
+			path = Tests/MewTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"Mew::MewTests::Product" /* MewTests.xctest */,
+				"Mew::Mew::Product" /* Mew.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_7 /* Sources */,
+				OBJ_10 /* Tests */,
+				OBJ_13 /* Products */,
+				D279A3112136B3BA007B045A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* Mew */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* Mew */ = {
+			isa = PBXGroup;
+			children = (
+				D279A3042136B31A007B045A /* Protocols */,
+				D279A3052136B31F007B045A /* ContainerView */,
+			);
+			name = Mew;
+			path = Sources/Mew;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"Mew::Mew" /* Mew */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_17 /* Build configuration list for PBXNativeTarget "Mew" */;
+			buildPhases = (
+				OBJ_20 /* Sources */,
+				OBJ_22 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mew;
+			productName = Mew;
+			productReference = "Mew::Mew::Product" /* Mew.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Mew::MewTests" /* MewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_35 /* Build configuration list for PBXNativeTarget "MewTests" */;
+			buildPhases = (
+				OBJ_38 /* Sources */,
+				OBJ_40 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_42 /* PBXTargetDependency */,
+			);
+			name = MewTests;
+			productName = MewTests;
+			productReference = "Mew::MewTests::Product" /* MewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 9999;
+				ORGANIZATIONNAME = Mercari;
+				TargetAttributes = {
+					"Mew::Mew" = {
+						LastSwiftMigration = 0940;
+					};
+				};
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Mew" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"Mew::Mew" /* Mew */,
+				"Mew::MewTests" /* MewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				D279A3192136B726007B045A /* _ContainerInterfaceBuilderView.xib in Sources */,
+				D279A30E2136B365007B045A /* ContainerView.swift in Sources */,
+				D279A30B2136B357007B045A /* Interactable.swift in Sources */,
+				D279A3102136B36F007B045A /* Container.swift in Sources */,
+				D279A30A2136B357007B045A /* Injectable.swift in Sources */,
+				D279A3072136B34E007B045A /* Instantiatable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				D279A3152136B579007B045A /* ContainerViewTests.swift in Sources */,
+				D279A3172136B5AB007B045A /* Supports.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Mew::Mew" /* Mew */;
+			targetProxy = D279A3022136B30C007B045A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Mew.xcodeproj/Mew_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Mew;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Mew;
+			};
+			name = Debug;
+		};
+		OBJ_19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Mew.xcodeproj/Mew_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Mew;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Mew;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Mew.xcodeproj/MewTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = MewTests;
+			};
+			name = Debug;
+		};
+		OBJ_37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Mew.xcodeproj/MewTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = MewTests;
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_17 /* Build configuration list for PBXNativeTarget "Mew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_18 /* Debug */,
+				OBJ_19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "Mew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_35 /* Build configuration list for PBXNativeTarget "MewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_36 /* Debug */,
+				OBJ_37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

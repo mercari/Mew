@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D243A1702136E4C400B075CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A16F2136E4C400B075CC /* AppDelegate.swift */; };
+		D243A1772136E4C500B075CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D243A1762136E4C500B075CC /* Assets.xcassets */; };
+		D243A17A2136E4C500B075CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D243A1782136E4C500B075CC /* LaunchScreen.storyboard */; };
+		D243A1962136E54E00B075CC /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A1882136E54E00B075CC /* MainViewController.xib */; };
+		D243A1972136E54E00B075CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A1892136E54E00B075CC /* MainViewController.swift */; };
+		D243A1982136E54E00B075CC /* ValueInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A18B2136E54E00B075CC /* ValueInputViewController.xib */; };
+		D243A1992136E54E00B075CC /* ValueInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A18C2136E54E00B075CC /* ValueInputViewController.swift */; };
+		D243A19A2136E54E00B075CC /* PushButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A18E2136E54E00B075CC /* PushButtonViewController.xib */; };
+		D243A19B2136E54E00B075CC /* PushButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A18F2136E54E00B075CC /* PushButtonViewController.swift */; };
+		D243A19C2136E54E00B075CC /* ResultLabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A1912136E54E00B075CC /* ResultLabelViewController.xib */; };
+		D243A19D2136E54E00B075CC /* ResultLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A1922136E54E00B075CC /* ResultLabelViewController.swift */; };
+		D243A19E2136E54E00B075CC /* PresentButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A1942136E54E00B075CC /* PresentButtonViewController.xib */; };
+		D243A19F2136E54E00B075CC /* PresentButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A1952136E54E00B075CC /* PresentButtonViewController.swift */; };
+		D243A1A12136E55500B075CC /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A1A02136E55500B075CC /* Environment.swift */; };
+		D243A1A42136E57A00B075CC /* Mew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D243A1A32136E57A00B075CC /* Mew.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D243A16C2136E4C400B075CC /* MewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D243A16F2136E4C400B075CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D243A1762136E4C500B075CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D243A1792136E4C500B075CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D243A17B2136E4C500B075CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D243A1882136E54E00B075CC /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		D243A1892136E54E00B075CC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D243A18B2136E54E00B075CC /* ValueInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValueInputViewController.xib; sourceTree = "<group>"; };
+		D243A18C2136E54E00B075CC /* ValueInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueInputViewController.swift; sourceTree = "<group>"; };
+		D243A18E2136E54E00B075CC /* PushButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushButtonViewController.xib; sourceTree = "<group>"; };
+		D243A18F2136E54E00B075CC /* PushButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButtonViewController.swift; sourceTree = "<group>"; };
+		D243A1912136E54E00B075CC /* ResultLabelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultLabelViewController.xib; sourceTree = "<group>"; };
+		D243A1922136E54E00B075CC /* ResultLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultLabelViewController.swift; sourceTree = "<group>"; };
+		D243A1942136E54E00B075CC /* PresentButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PresentButtonViewController.xib; sourceTree = "<group>"; };
+		D243A1952136E54E00B075CC /* PresentButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentButtonViewController.swift; sourceTree = "<group>"; };
+		D243A1A02136E55500B075CC /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		D243A1A32136E57A00B075CC /* Mew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Mew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D243A1692136E4C400B075CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D243A1A42136E57A00B075CC /* Mew.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D243A1632136E4C400B075CC = {
+			isa = PBXGroup;
+			children = (
+				D243A16E2136E4C400B075CC /* MewExample */,
+				D243A16D2136E4C400B075CC /* Products */,
+				D243A1A22136E57A00B075CC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D243A16D2136E4C400B075CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D243A16C2136E4C400B075CC /* MewExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D243A16E2136E4C400B075CC /* MewExample */ = {
+			isa = PBXGroup;
+			children = (
+				D243A1A02136E55500B075CC /* Environment.swift */,
+				D243A1872136E54E00B075CC /* Main */,
+				D243A16F2136E4C400B075CC /* AppDelegate.swift */,
+				D243A1762136E4C500B075CC /* Assets.xcassets */,
+				D243A1782136E4C500B075CC /* LaunchScreen.storyboard */,
+				D243A17B2136E4C500B075CC /* Info.plist */,
+			);
+			name = MewExample;
+			path = Sources/MewExample;
+			sourceTree = "<group>";
+		};
+		D243A1872136E54E00B075CC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D243A1882136E54E00B075CC /* MainViewController.xib */,
+				D243A1892136E54E00B075CC /* MainViewController.swift */,
+				D243A18A2136E54E00B075CC /* ValueInput */,
+				D243A18D2136E54E00B075CC /* PushButton */,
+				D243A1902136E54E00B075CC /* ResultLabel */,
+				D243A1932136E54E00B075CC /* PresentButton */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D243A18A2136E54E00B075CC /* ValueInput */ = {
+			isa = PBXGroup;
+			children = (
+				D243A18B2136E54E00B075CC /* ValueInputViewController.xib */,
+				D243A18C2136E54E00B075CC /* ValueInputViewController.swift */,
+			);
+			path = ValueInput;
+			sourceTree = "<group>";
+		};
+		D243A18D2136E54E00B075CC /* PushButton */ = {
+			isa = PBXGroup;
+			children = (
+				D243A18E2136E54E00B075CC /* PushButtonViewController.xib */,
+				D243A18F2136E54E00B075CC /* PushButtonViewController.swift */,
+			);
+			path = PushButton;
+			sourceTree = "<group>";
+		};
+		D243A1902136E54E00B075CC /* ResultLabel */ = {
+			isa = PBXGroup;
+			children = (
+				D243A1912136E54E00B075CC /* ResultLabelViewController.xib */,
+				D243A1922136E54E00B075CC /* ResultLabelViewController.swift */,
+			);
+			path = ResultLabel;
+			sourceTree = "<group>";
+		};
+		D243A1932136E54E00B075CC /* PresentButton */ = {
+			isa = PBXGroup;
+			children = (
+				D243A1942136E54E00B075CC /* PresentButtonViewController.xib */,
+				D243A1952136E54E00B075CC /* PresentButtonViewController.swift */,
+			);
+			path = PresentButton;
+			sourceTree = "<group>";
+		};
+		D243A1A22136E57A00B075CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D243A1A32136E57A00B075CC /* Mew.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D243A16B2136E4C400B075CC /* MewExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D243A17E2136E4C500B075CC /* Build configuration list for PBXNativeTarget "MewExample" */;
+			buildPhases = (
+				D243A1682136E4C400B075CC /* Sources */,
+				D243A1692136E4C400B075CC /* Frameworks */,
+				D243A16A2136E4C400B075CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MewExample;
+			productName = MewExample;
+			productReference = D243A16C2136E4C400B075CC /* MewExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D243A1642136E4C400B075CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = mercari;
+				TargetAttributes = {
+					D243A16B2136E4C400B075CC = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = D243A1672136E4C400B075CC /* Build configuration list for PBXProject "MewExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D243A1632136E4C400B075CC;
+			productRefGroup = D243A16D2136E4C400B075CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D243A16B2136E4C400B075CC /* MewExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D243A16A2136E4C400B075CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D243A19A2136E54E00B075CC /* PushButtonViewController.xib in Resources */,
+				D243A17A2136E4C500B075CC /* LaunchScreen.storyboard in Resources */,
+				D243A1982136E54E00B075CC /* ValueInputViewController.xib in Resources */,
+				D243A1962136E54E00B075CC /* MainViewController.xib in Resources */,
+				D243A19C2136E54E00B075CC /* ResultLabelViewController.xib in Resources */,
+				D243A1772136E4C500B075CC /* Assets.xcassets in Resources */,
+				D243A19E2136E54E00B075CC /* PresentButtonViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D243A1682136E4C400B075CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D243A19F2136E54E00B075CC /* PresentButtonViewController.swift in Sources */,
+				D243A19B2136E54E00B075CC /* PushButtonViewController.swift in Sources */,
+				D243A1992136E54E00B075CC /* ValueInputViewController.swift in Sources */,
+				D243A1A12136E55500B075CC /* Environment.swift in Sources */,
+				D243A1702136E4C400B075CC /* AppDelegate.swift in Sources */,
+				D243A1972136E54E00B075CC /* MainViewController.swift in Sources */,
+				D243A19D2136E54E00B075CC /* ResultLabelViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D243A1782136E4C500B075CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D243A1792136E4C500B075CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D243A17C2136E4C500B075CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D243A17D2136E4C500B075CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D243A17F2136E4C500B075CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/MewExample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.ios.MewExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D243A1802136E4C500B075CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/MewExample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.ios.MewExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D243A1672136E4C400B075CC /* Build configuration list for PBXProject "MewExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D243A17C2136E4C500B075CC /* Debug */,
+				D243A17D2136E4C500B075CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D243A17E2136E4C500B075CC /* Build configuration list for PBXNativeTarget "MewExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D243A17F2136E4C500B075CC /* Debug */,
+				D243A1802136E4C500B075CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D243A1642136E4C400B075CC /* Project object */;
+}
