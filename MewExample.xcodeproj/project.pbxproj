@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DB56AD62138FFA1004A0655 /* Mew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D243A1A32136E57A00B075CC /* Mew.framework */; };
+		6DB56AD72138FFA1004A0655 /* Mew.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D243A1A32136E57A00B075CC /* Mew.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D243A1702136E4C400B075CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A16F2136E4C400B075CC /* AppDelegate.swift */; };
 		D243A1772136E4C500B075CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D243A1762136E4C500B075CC /* Assets.xcassets */; };
 		D243A17A2136E4C500B075CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D243A1782136E4C500B075CC /* LaunchScreen.storyboard */; };
@@ -21,8 +23,21 @@
 		D243A19E2136E54E00B075CC /* PresentButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A1942136E54E00B075CC /* PresentButtonViewController.xib */; };
 		D243A19F2136E54E00B075CC /* PresentButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A1952136E54E00B075CC /* PresentButtonViewController.swift */; };
 		D243A1A12136E55500B075CC /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A1A02136E55500B075CC /* Environment.swift */; };
-		D243A1A42136E57A00B075CC /* Mew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D243A1A32136E57A00B075CC /* Mew.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6DB56AD82138FFA1004A0655 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6DB56AD72138FFA1004A0655 /* Mew.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D243A16C2136E4C400B075CC /* MewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D243A1A42136E57A00B075CC /* Mew.framework in Frameworks */,
+				6DB56AD62138FFA1004A0655 /* Mew.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +169,7 @@
 				D243A1682136E4C400B075CC /* Sources */,
 				D243A1692136E4C400B075CC /* Frameworks */,
 				D243A16A2136E4C400B075CC /* Resources */,
+				6DB56AD82138FFA1004A0655 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
