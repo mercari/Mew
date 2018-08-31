@@ -10,6 +10,11 @@ The latest version is 0.1.0
 github "mercari/Mew"
 ```
 
+### CocoaPods
+```
+pod 'Mew', :git => 'https://github.com/mercari/Mew.git'
+```
+
 ## Usage
 
 ### ContainerView with Manual Control 
