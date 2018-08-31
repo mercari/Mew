@@ -30,7 +30,8 @@ pod 'Mew', :git => 'https://github.com/mercari/Mew.git'
 1. 🎉
 
 ## Reference
-Replace with iOSDC presentation link.
+My Presentation.
+https://www.icloud.com/keynote/0vgTYDXyHQTd0l1FKTiF1jT7g#MicroViewController-en
 
 ## Supporting
 |  | Supported |
