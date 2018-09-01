@@ -32,6 +32,7 @@ final class MainViewController: UIViewController, Instantiatable {
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -35,6 +35,7 @@ final class PushButtonViewController: UIViewController, Instantiatable, Interact
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
