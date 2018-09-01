@@ -9,8 +9,8 @@
 import UIKit
 import Mew
 
-/// Note: Push ValueInput when tapped button.
-/// Output is user inputed value.
+/// Pushes ValueInputViewController when the button is tapped.
+/// Outputs the number received from ValueInputViewController.
 final class PushButtonViewController: UIViewController, Instantiatable, Interactable {
     struct Model {
         // No status
@@ -23,7 +23,7 @@ final class PushButtonViewController: UIViewController, Instantiatable, Interact
 
     var model: Model = .initial {
         didSet {
-            // nop
+            // Do nothing
         }
     }
 

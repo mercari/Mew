@@ -9,8 +9,9 @@
 import UIKit
 import Mew
 
-/// Note: Support Push/Present both.
-/// Output is user inputed value and send when tapped Done button.
+/// A form for inputting a number.
+/// Supports being pushed or presented.
+/// Outputs numberInput when the Done button is tapped
 final class ValueInputViewController: UIViewController, Instantiatable, Interactable {
     typealias Environment = EnvironmentMock
     
@@ -33,7 +34,7 @@ final class ValueInputViewController: UIViewController, Instantiatable, Interact
 
     var model: Model {
         didSet {
-            // nop
+            // Do nothing
         }
     }
 

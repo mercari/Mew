@@ -9,9 +9,8 @@
 import UIKit
 import Mew
 
-/// Note: Present 2 Int value additin.
-/// 2 Int value is require.
-/// Send reset signal when tapped button.
+/// Displays the addition of two Int values.
+/// Sends a reset signal if the Reset button is tapped.
 final class ResultLabelViewController: UIViewController, Instantiatable, Injectable, Interactable {
     typealias Environment = EnvironmentMock
     struct Model {
