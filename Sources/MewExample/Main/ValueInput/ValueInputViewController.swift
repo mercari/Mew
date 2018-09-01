@@ -68,10 +68,14 @@ final class ValueInputViewController: UIViewController, Instantiatable, Interact
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
-        handler?(Output.init(inputedValue: Int(textField.text ?? "0") ?? 0))
         switch model.kind {
-        case .push: navigationController?.popViewController(animated: true)
-        case .present: dismiss(animated: true, completion: nil)
+        case .push:
+            navigationController?.popViewController(animated: true)
+            handler?(Output.init(inputedValue: Int(textField.text ?? "0") ?? 0))
+        case .present:
+            dismiss(animated: true, completion: {
+                self.handler?(Output.init(inputedValue: Int(self.textField.text ?? "0") ?? 0))
+            })
         }
     }
 }
