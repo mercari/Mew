@@ -108,8 +108,8 @@
 				D243A1882136E54E00B075CC /* MainViewController.xib */,
 				D243A1892136E54E00B075CC /* MainViewController.swift */,
 				D243A18A2136E54E00B075CC /* ValueInput */,
-				D243A18D2136E54E00B075CC /* PushButton */,
 				D243A1902136E54E00B075CC /* ResultLabel */,
+				D243A18D2136E54E00B075CC /* PushButton */,
 				D243A1932136E54E00B075CC /* PresentButton */,
 			);
 			path = Main;

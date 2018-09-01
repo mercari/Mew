@@ -9,9 +9,8 @@
 import UIKit
 import Mew
 
-/// Note: Present 2 Int value additin.
-/// 2 Int value is require.
-/// Send reset signal when tapped button.
+/// Displays the addition of two Int values.
+/// Sends a reset signal if the Reset button is tapped.
 final class ResultLabelViewController: UIViewController, Instantiatable, Injectable, Interactable {
     typealias Environment = EnvironmentMock
     struct Model {
@@ -33,7 +32,7 @@ final class ResultLabelViewController: UIViewController, Instantiatable, Injecta
     let environment: EnvironmentMock
     var model: Model {
         didSet {
-            update()
+            updateUI()
         }
     }
     var handler: ((Output) -> Void)?
@@ -46,6 +45,11 @@ final class ResultLabelViewController: UIViewController, Instantiatable, Injecta
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
 
+    @available(*, unavailable)
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     func input(_ input: Input) {
         model = input
     }
@@ -54,17 +58,12 @@ final class ResultLabelViewController: UIViewController, Instantiatable, Injecta
         self.handler = handler
     }
 
-    @available(*, unavailable)
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        update()
+        updateUI()
     }
 
-    func update() {
+    func updateUI() {
         label?.text = "\(model.x) + \(model.y) = \(model.x + model.y)"
     }
 

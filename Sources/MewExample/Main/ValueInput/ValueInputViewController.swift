@@ -9,30 +9,32 @@
 import UIKit
 import Mew
 
-/// Note: Support Push/Present both.
-/// Output is user inputed value and send when tapped Done button.
+/// A form for inputting a number.
+/// Supports being pushed or presented.
+/// Outputs numberInput when the Done button is tapped
 final class ValueInputViewController: UIViewController, Instantiatable, Interactable {
     typealias Environment = EnvironmentMock
-    enum Kind {
+    
+    enum PresentedStyle {
         case push
         case present
     }
 
     struct Model {
-        var kind: Kind
+        var presentedStyle: PresentedStyle
     }
 
     struct Input {
-        var kind: Kind
+        var presentedStyle: PresentedStyle
     }
 
     struct Output {
-        var inputedValue: Int
+        var numberInput: Int
     }
 
     var model: Model {
         didSet {
-            // nop
+            // Do nothing
         }
     }
 
@@ -43,7 +45,7 @@ final class ValueInputViewController: UIViewController, Instantiatable, Interact
 
     init(with input: Input, environment: EnvironmentMock) {
         self.environment = environment
-        self.model = Model(kind: input.kind)
+        self.model = Model(presentedStyle: input.presentedStyle)
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
 
@@ -54,7 +56,7 @@ final class ValueInputViewController: UIViewController, Instantiatable, Interact
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if model.kind == .present {
+        if model.presentedStyle == .present {
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "✕", style: .done, target: self, action: #selector(cancel(_:)))
         }
     }
@@ -68,8 +70,8 @@ final class ValueInputViewController: UIViewController, Instantiatable, Interact
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
-        let output = Output.init(inputedValue: Int(textField.text ?? "0") ?? 0)
-        switch model.kind {
+        let output = Output.init(numberInput: Int(textField.text ?? "0") ?? 0)
+        switch model.presentedStyle {
         case .push:
             navigationController?.popViewController(animated: true)
             handler?(output)

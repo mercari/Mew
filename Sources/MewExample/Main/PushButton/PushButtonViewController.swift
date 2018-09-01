@@ -9,8 +9,8 @@
 import UIKit
 import Mew
 
-/// Note: Push ValueInput when tapped button.
-/// Output is user inputed value.
+/// Pushes ValueInputViewController when the button is tapped.
+/// Outputs the number received from ValueInputViewController.
 final class PushButtonViewController: UIViewController, Instantiatable, Interactable {
     struct Model {
         // No status
@@ -23,7 +23,7 @@ final class PushButtonViewController: UIViewController, Instantiatable, Interact
 
     var model: Model = .initial {
         didSet {
-            // nop
+            // Do nothing
         }
     }
 
@@ -35,6 +35,7 @@ final class PushButtonViewController: UIViewController, Instantiatable, Interact
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -48,9 +49,9 @@ final class PushButtonViewController: UIViewController, Instantiatable, Interact
     }
     
     @IBAction func buttonTapped(_ sender: Any) {
-        let viewController = ValueInputViewController(with: .init(kind: .push), environment: environment)
+        let viewController = ValueInputViewController(with: .init(presentedStyle: .push), environment: environment)
         viewController.output { (output) in
-            self.handler?(output.inputedValue)
+            self.handler?(output.numberInput)
         }
         navigationController?.pushViewController(viewController, animated: true)
     }
