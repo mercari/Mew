@@ -49,9 +49,9 @@ final class PushButtonViewController: UIViewController, Instantiatable, Interact
     }
     
     @IBAction func buttonTapped(_ sender: Any) {
-        let viewController = ValueInputViewController(with: .init(kind: .push), environment: environment)
+        let viewController = ValueInputViewController(with: .init(presentedStyle: .push), environment: environment)
         viewController.output { (output) in
-            self.handler?(output.inputedValue)
+            self.handler?(output.numberInput)
         }
         navigationController?.pushViewController(viewController, animated: true)
     }

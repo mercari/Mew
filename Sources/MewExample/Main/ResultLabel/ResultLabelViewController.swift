@@ -33,7 +33,7 @@ final class ResultLabelViewController: UIViewController, Instantiatable, Injecta
     let environment: EnvironmentMock
     var model: Model {
         didSet {
-            update()
+            updateUI()
         }
     }
     var handler: ((Output) -> Void)?
@@ -46,6 +46,11 @@ final class ResultLabelViewController: UIViewController, Instantiatable, Injecta
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
 
+    @available(*, unavailable)
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     func input(_ input: Input) {
         model = input
     }
@@ -54,17 +59,12 @@ final class ResultLabelViewController: UIViewController, Instantiatable, Injecta
         self.handler = handler
     }
 
-    @available(*, unavailable)
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        update()
+        updateUI()
     }
 
-    func update() {
+    func updateUI() {
         label?.text = "\(model.x) + \(model.y) = \(model.x + model.y)"
     }
 

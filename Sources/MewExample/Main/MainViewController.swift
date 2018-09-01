@@ -23,7 +23,7 @@ final class MainViewController: UIViewController, Instantiatable {
 
     var model: Model = .initial {
         didSet {
-            update()
+            updateUI()
         }
     }
 
@@ -39,18 +39,18 @@ final class MainViewController: UIViewController, Instantiatable {
 
     @IBOutlet weak var containerView: ContainerView!
 
-    lazy var pushContainer = self.containerView.makeContainer(for: PushButtonViewController.self, parent: self, with: ())
-    lazy var presentContainer = self.containerView.makeContainer(for: PresentButtonViewController.self, parent: self, with: ())
+    lazy var pushButtonContainer = self.containerView.makeContainer(for: PushButtonViewController.self, parent: self, with: ())
+    lazy var presentButtonContainer = self.containerView.makeContainer(for: PresentButtonViewController.self, parent: self, with: ())
     lazy var resultContainer = self.containerView.makeContainer(for: ResultLabelViewController.self, parent: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Mew Example"
 
-        pushContainer.output { [weak self] (value) in
+        pushButtonContainer.output { [weak self] (value) in
             self?.model.x = value
         }
-        presentContainer.output { [weak self] (value) in
+        presentButtonContainer.output { [weak self] (value) in
             self?.model.y = value
         }
         resultContainer.output { [weak self] _ in
@@ -59,10 +59,10 @@ final class MainViewController: UIViewController, Instantiatable {
                 self?.view.layoutSubviews()
             }
         }
-        update()
+        updateUI()
     }
 
-    func update() {
+    func updateUI() {
         resultContainer.input(ResultLabelViewController.Input(x: model.x, y: model.y))
     }
 

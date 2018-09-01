@@ -49,9 +49,9 @@ final class PresentButtonViewController: UIViewController, Instantiatable, Inter
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
-        let viewController = ValueInputViewController(with: .init(kind: .present), environment: environment)
+        let viewController = ValueInputViewController(with: .init(presentedStyle: .present), environment: environment)
         viewController.output { (output) in
-            self.handler?(output.inputedValue)
+            self.handler?(output.numberInput)
         }
         present(UINavigationController(rootViewController: viewController), animated: true, completion: nil)
     }
