@@ -9,8 +9,8 @@
 import UIKit
 import Mew
 
-/// Displays two buttons to push and present ValueInputViewController.
-/// Once a number is received from each ValueInputViewController, their addition is displayed in ResultLabel's ContainerView
+/// Displays two buttons to push and present ValueInputTableViewController.
+/// Once a number is received from each ValueInputTableViewController, their addition is displayed in ResultLabel's ContainerView
 final class MainViewController: UIViewController, Instantiatable {
     struct Model {
         var x: Int?

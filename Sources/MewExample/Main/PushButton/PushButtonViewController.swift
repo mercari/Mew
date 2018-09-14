@@ -9,8 +9,8 @@
 import UIKit
 import Mew
 
-/// Pushes ValueInputViewController when the button is tapped.
-/// Outputs the number received from ValueInputViewController.
+/// Pushes ValueInputTableViewController when the button is tapped.
+/// Outputs the number received from ValueInputTableViewController.
 final class PushButtonViewController: UIViewController, Instantiatable, Interactable {
     struct Model {
         // No status
@@ -49,7 +49,7 @@ final class PushButtonViewController: UIViewController, Instantiatable, Interact
     }
     
     @IBAction func buttonTapped(_ sender: Any) {
-        let viewController = ValueInputViewController(with: .init(presentedStyle: .push), environment: environment)
+        let viewController = ValueInputTableViewController(with: ValueInputTableViewController.Input(elements: Array(1..<9999)), environment: environment)
         viewController.output { (output) in
             self.handler?(output.numberInput)
         }
