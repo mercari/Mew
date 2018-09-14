@@ -41,9 +41,9 @@ final class MainViewController: UIViewController, Instantiatable {
 
     @IBOutlet weak var containerView: ContainerView!
 
-    lazy var pushButtonContainer = self.containerView.makeContainer(for: PushButtonViewController.self, parent: self, with: ())
-    lazy var presentButtonContainer = self.containerView.makeContainer(for: PresentButtonViewController.self, parent: self, with: ())
-    lazy var resultContainer = self.containerView.makeContainer(for: ResultLabelViewController.self, parent: self)
+    lazy var pushButtonContainer = self.containerView.makeContainer(for: PushButtonViewController.self, parentViewController: self, with: ())
+    lazy var presentButtonContainer = self.containerView.makeContainer(for: PresentButtonViewController.self, parentViewController: self, with: ())
+    lazy var resultContainer = self.containerView.makeContainer(for: ResultLabelViewController.self, parentViewController: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()

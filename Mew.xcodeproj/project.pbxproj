@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2568DD9214BC02E00FCA44A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568DD8214BC02E00FCA44A /* TableViewCell.swift */; };
+		D2568DDB214BC0E300FCA44A /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568DDA214BC0E300FCA44A /* CellProtocol.swift */; };
+		D2568DDD214BC32D00FCA44A /* TableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568DDC214BC32D00FCA44A /* TableViewHeaderFooterView.swift */; };
+		D2568DDF214BC3DC00FCA44A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568DDE214BC3DC00FCA44A /* CollectionViewCell.swift */; };
+		D2568DE1214BC51E00FCA44A /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568DE0214BC51E00FCA44A /* CollectionReusableView.swift */; };
+		D2568DE6214BC86800FCA44A /* CollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568DE3214BC86400FCA44A /* CollectionViewCellTests.swift */; };
+		D2568DE7214BC86800FCA44A /* TableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568DE2214BC86400FCA44A /* TableViewCellTests.swift */; };
+		D2568DEF214BCA3B00FCA44A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568DEE214BCA3B00FCA44A /* AppDelegate.swift */; };
+		D2568DF1214BCA3B00FCA44A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568DF0214BCA3B00FCA44A /* ViewController.swift */; };
+		D2568DF4214BCA3B00FCA44A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2568DF2214BCA3B00FCA44A /* Main.storyboard */; };
+		D2568DF6214BCA3C00FCA44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2568DF5214BCA3C00FCA44A /* Assets.xcassets */; };
+		D2568DF9214BCA3C00FCA44A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2568DF7214BCA3C00FCA44A /* LaunchScreen.storyboard */; };
 		D279A3072136B34E007B045A /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3062136B34E007B045A /* Instantiatable.swift */; };
 		D279A30A2136B357007B045A /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3082136B357007B045A /* Injectable.swift */; };
 		D279A30B2136B357007B045A /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3092136B357007B045A /* Interactable.swift */; };
@@ -21,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D2568DFE214BCC3600FCA44A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2568DEB214BCA3B00FCA44A;
+			remoteInfo = MewTestsApp;
+		};
 		D279A3022136B30C007B045A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
@@ -31,6 +50,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2568DD8214BC02E00FCA44A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		D2568DDA214BC0E300FCA44A /* CellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
+		D2568DDC214BC32D00FCA44A /* TableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		D2568DDE214BC3DC00FCA44A /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		D2568DE0214BC51E00FCA44A /* CollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
+		D2568DE2214BC86400FCA44A /* TableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellTests.swift; sourceTree = "<group>"; };
+		D2568DE3214BC86400FCA44A /* CollectionViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellTests.swift; sourceTree = "<group>"; };
+		D2568DEC214BCA3B00FCA44A /* MewTestsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MewTestsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2568DEE214BCA3B00FCA44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D2568DF0214BCA3B00FCA44A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D2568DF3214BCA3B00FCA44A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D2568DF5214BCA3C00FCA44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D2568DF8214BCA3C00FCA44A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D2568DFA214BCA3C00FCA44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D279A3062136B34E007B045A /* Instantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
 		D279A3082136B357007B045A /* Injectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
 		D279A3092136B357007B045A /* Interactable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactable.swift; sourceTree = "<group>"; };
@@ -45,6 +78,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D2568DE9214BCA3B00FCA44A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		OBJ_22 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
@@ -65,12 +105,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2568DD7214BC00A00FCA44A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2568DD8214BC02E00FCA44A /* TableViewCell.swift */,
+				D2568DDC214BC32D00FCA44A /* TableViewHeaderFooterView.swift */,
+				D2568DDE214BC3DC00FCA44A /* CollectionViewCell.swift */,
+				D2568DE0214BC51E00FCA44A /* CollectionReusableView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D2568DED214BCA3B00FCA44A /* MewTestsApp */ = {
+			isa = PBXGroup;
+			children = (
+				D2568DEE214BCA3B00FCA44A /* AppDelegate.swift */,
+				D2568DF0214BCA3B00FCA44A /* ViewController.swift */,
+				D2568DF2214BCA3B00FCA44A /* Main.storyboard */,
+				D2568DF5214BCA3C00FCA44A /* Assets.xcassets */,
+				D2568DF7214BCA3C00FCA44A /* LaunchScreen.storyboard */,
+				D2568DFA214BCA3C00FCA44A /* Info.plist */,
+			);
+			name = MewTestsApp;
+			path = Tests/MewTestsApp;
+			sourceTree = "<group>";
+		};
 		D279A3042136B31A007B045A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				D279A3062136B34E007B045A /* Instantiatable.swift */,
 				D279A3082136B357007B045A /* Injectable.swift */,
 				D279A3092136B357007B045A /* Interactable.swift */,
+				D2568DDA214BC0E300FCA44A /* CellProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -96,6 +162,7 @@
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D2568DED214BCA3B00FCA44A /* MewTestsApp */,
 				OBJ_11 /* MewTests */,
 			);
 			name = Tests;
@@ -106,6 +173,8 @@
 			children = (
 				D279A3162136B5AB007B045A /* Supports.swift */,
 				D279A3142136B579007B045A /* ContainerViewTests.swift */,
+				D2568DE3214BC86400FCA44A /* CollectionViewCellTests.swift */,
+				D2568DE2214BC86400FCA44A /* TableViewCellTests.swift */,
 			);
 			name = MewTests;
 			path = Tests/MewTests;
@@ -116,6 +185,7 @@
 			children = (
 				"Mew::MewTests::Product" /* MewTests.xctest */,
 				"Mew::Mew::Product" /* Mew.framework */,
+				D2568DEC214BCA3B00FCA44A /* MewTestsApp.app */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -143,6 +213,7 @@
 			children = (
 				D279A3042136B31A007B045A /* Protocols */,
 				D279A3052136B31F007B045A /* ContainerView */,
+				D2568DD7214BC00A00FCA44A /* Cells */,
 			);
 			name = Mew;
 			path = Sources/Mew;
@@ -151,6 +222,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D2568DEB214BCA3B00FCA44A /* MewTestsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2568DFB214BCA3C00FCA44A /* Build configuration list for PBXNativeTarget "MewTestsApp" */;
+			buildPhases = (
+				D2568DE8214BCA3B00FCA44A /* Sources */,
+				D2568DE9214BCA3B00FCA44A /* Frameworks */,
+				D2568DEA214BCA3B00FCA44A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MewTestsApp;
+			productName = MewTestsApp;
+			productReference = D2568DEC214BCA3B00FCA44A /* MewTestsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		"Mew::Mew" /* Mew */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_17 /* Build configuration list for PBXNativeTarget "Mew" */;
@@ -178,6 +266,7 @@
 			);
 			dependencies = (
 				OBJ_42 /* PBXTargetDependency */,
+				D2568DFF214BCC3600FCA44A /* PBXTargetDependency */,
 			);
 			name = MewTests;
 			productName = MewTests;
@@ -194,8 +283,15 @@
 				LastUpgradeCheck = 9999;
 				ORGANIZATIONNAME = Mercari;
 				TargetAttributes = {
+					D2568DEB214BCA3B00FCA44A = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+					};
 					"Mew::Mew" = {
 						LastSwiftMigration = 0940;
+					};
+					"Mew::MewTests" = {
+						TestTargetID = D2568DEB214BCA3B00FCA44A;
 					};
 				};
 			};
@@ -214,21 +310,49 @@
 			targets = (
 				"Mew::Mew" /* Mew */,
 				"Mew::MewTests" /* MewTests */,
+				D2568DEB214BCA3B00FCA44A /* MewTestsApp */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		D2568DEA214BCA3B00FCA44A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2568DF9214BCA3C00FCA44A /* LaunchScreen.storyboard in Resources */,
+				D2568DF6214BCA3C00FCA44A /* Assets.xcassets in Resources */,
+				D2568DF4214BCA3B00FCA44A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		D2568DE8214BCA3B00FCA44A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2568DF1214BCA3B00FCA44A /* ViewController.swift in Sources */,
+				D2568DEF214BCA3B00FCA44A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		OBJ_20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				D2568DDF214BC3DC00FCA44A /* CollectionViewCell.swift in Sources */,
+				D2568DE1214BC51E00FCA44A /* CollectionReusableView.swift in Sources */,
 				D279A3192136B726007B045A /* _ContainerInterfaceBuilderView.xib in Sources */,
+				D2568DDD214BC32D00FCA44A /* TableViewHeaderFooterView.swift in Sources */,
 				D279A30E2136B365007B045A /* ContainerView.swift in Sources */,
 				D279A30B2136B357007B045A /* Interactable.swift in Sources */,
 				D279A3102136B36F007B045A /* Container.swift in Sources */,
 				D279A30A2136B357007B045A /* Injectable.swift in Sources */,
+				D2568DD9214BC02E00FCA44A /* TableViewCell.swift in Sources */,
 				D279A3072136B34E007B045A /* Instantiatable.swift in Sources */,
+				D2568DDB214BC0E300FCA44A /* CellProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				D2568DE6214BC86800FCA44A /* CollectionViewCellTests.swift in Sources */,
+				D2568DE7214BC86800FCA44A /* TableViewCellTests.swift in Sources */,
 				D279A3152136B579007B045A /* ContainerViewTests.swift in Sources */,
 				D279A3172136B5AB007B045A /* Supports.swift in Sources */,
 			);
@@ -244,6 +370,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D2568DFF214BCC3600FCA44A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2568DEB214BCA3B00FCA44A /* MewTestsApp */;
+			targetProxy = D2568DFE214BCC3600FCA44A /* PBXContainerItemProxy */;
+		};
 		OBJ_42 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Mew::Mew" /* Mew */;
@@ -251,7 +382,144 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		D2568DF2214BCA3B00FCA44A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2568DF3214BCA3B00FCA44A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D2568DF7214BCA3C00FCA44A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2568DF8214BCA3C00FCA44A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		D2568DFC214BCA3C00FCA44A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/MewTestsApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.ios.MewTestsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D2568DFD214BCA3C00FCA44A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/MewTestsApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.ios.MewTestsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		OBJ_18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -340,6 +608,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SWIFT_VERSION = 4.0;
 				TARGET_NAME = MewTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MewTestsApp.app/MewTestsApp";
 			};
 			name = Debug;
 		};
@@ -359,6 +628,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SWIFT_VERSION = 4.0;
 				TARGET_NAME = MewTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MewTestsApp.app/MewTestsApp";
 			};
 			name = Release;
 		};
@@ -386,6 +656,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D2568DFB214BCA3C00FCA44A /* Build configuration list for PBXNativeTarget "MewTestsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2568DFC214BCA3C00FCA44A /* Debug */,
+				D2568DFD214BCA3C00FCA44A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		OBJ_17 /* Build configuration list for PBXNativeTarget "Mew" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
