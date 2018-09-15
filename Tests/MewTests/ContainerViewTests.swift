@@ -99,7 +99,7 @@ class ContainerViewTests: XCTestCase {
         }
 
         let viewController = ContainerViewController(with: (), environment: ())
-        let container1 = viewController.containerView.makeContainer(for: ContainedViewController.self, parent: viewController, with: 1)
+        let container1 = viewController.containerView.makeContainer(for: ContainedViewController.self, parentViewController: viewController, with: 1)
         XCTAssertEqual(container1.insertIndex, 1)
         XCTAssertTrue(viewController.childViewControllers.contains(where: { $0 is ContainedViewController }))
     }
@@ -132,9 +132,9 @@ class ContainerViewTests: XCTestCase {
 
         let viewController = ContainerViewController(with: (), environment: ())
 
-        let container1 = viewController.containerView.makeContainer(for: ContainedViewController.self, parent: viewController)
-        let container2 = viewController.containerView.makeContainer(for: ContainedViewController.self, parent: viewController)
-        let container3 = viewController.containerView.makeContainer(for: ContainedViewController.self, parent: viewController)
+        let container1 = viewController.containerView.makeContainer(for: ContainedViewController.self, parentViewController: viewController)
+        let container2 = viewController.containerView.makeContainer(for: ContainedViewController.self, parentViewController: viewController)
+        let container3 = viewController.containerView.makeContainer(for: ContainedViewController.self, parentViewController: viewController)
 
         XCTAssertEqual(viewController.containerView.arrangedSubviews.count, 0)
         XCTAssertEqual(viewController.childViewControllers.count, 0)
@@ -214,9 +214,9 @@ class ContainerViewTests: XCTestCase {
 
         let viewController = ContainerViewController(with: (), environment: ())
 
-        let container1 = viewController.containerView.makeContainer(for: ContainedViewController.self, parent: viewController)
-        let container2 = viewController.containerView.makeContainer(for: ContainedViewController.self, parent: viewController)
-        let container3 = viewController.containerView.makeContainer(for: ContainedViewController.self, parent: viewController)
+        let container1 = viewController.containerView.makeContainer(for: ContainedViewController.self, parentViewController: viewController)
+        let container2 = viewController.containerView.makeContainer(for: ContainedViewController.self, parentViewController: viewController)
+        let container3 = viewController.containerView.makeContainer(for: ContainedViewController.self, parentViewController: viewController)
 
         var result1 = [String]()
         var result2 = [String]()

@@ -5,7 +5,7 @@ iOS MicroViewController support library.
 ## Installation
 
 ### Carthage
-The latest version is 0.1.0
+The latest version is 0.2.0
 ```
 github "mercari/Mew"
 ```
@@ -29,6 +29,12 @@ pod 'Mew', :git => 'https://github.com/mercari/Mew.git'
 1. Add childViewController using `containerView.makeContainer`.
 1. 🎉
 
+### Cells
+1. Conform your TableViewController class as `Instantiatable`.
+1. Conform your CellViewController class as `Instantiatable`, `Injectable`.
+1. `TableViewCell<CellViewController>.register`, `TableViewCell<CellViewController>.dequeued` support TableView cells.
+1. 🎉
+
 ## Reference
 My Presentation.
 https://www.icloud.com/keynote/0vgTYDXyHQTd0l1FKTiF1jT7g#MicroViewController-en
@@ -39,8 +45,8 @@ https://www.icloud.com/keynote/0vgTYDXyHQTd0l1FKTiF1jT7g#MicroViewController-en
 | ContainerView | ✅ |
 | Container<T> | ✅ |
 | Environment, Testing support | WIP |
-| UITableView support | WIP |
-| UICollectionView support | WIP |
+| UITableView support | ✅ |
+| UICollectionView support | ✅ |
 
 ## Committers
 

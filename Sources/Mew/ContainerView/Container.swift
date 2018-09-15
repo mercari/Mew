@@ -43,20 +43,21 @@ extension ContainerView {
         var contentsHandler: (([Content]) -> ())?
         var prev: ContainerViewContainerProtocol?
         weak var base: ContainerView?
-        weak var parent: Parent?
+        weak var parentViewController: Parent?
 
         var insertIndex: Int {
             return (prev?.insertIndex ?? 0) + contents.count
         }
 
-        init(base: ContainerView, parent: Parent) {
+        init(base: ContainerView, parentViewController: Parent) {
             self.base = base
-            self.parent = parent
+            self.parentViewController = parentViewController
             self.prev = base.latestAddedContainer
             base.latestAddedContainer = self
         }
     }
 }
+
 extension ContainerView.Container: Injectable where Content: Injectable {
     public typealias Input = Content.Input?
     public typealias Inputs = [Content.Input]
@@ -69,7 +70,7 @@ extension ContainerView.Container: Injectable where Content: Injectable {
     /// Inputling multiple values and make some viewControllers or removing.
     /// - Parameter inputs: Array value of viewController input.
     public func inputs(_ inputs: Inputs) {
-        guard let parent = parent, let base = base else { return }
+        guard let parentViewController = parentViewController, let base = base else { return }
         zip(contents, inputs)
             .forEach { viewController, input in
                 viewController.input(input)
@@ -87,8 +88,8 @@ extension ContainerView.Container: Injectable where Content: Injectable {
         if contents.count < inputs.count {
             inputs[contents.count..<inputs.count]
                 .forEach { input in
-                    let viewController = Content.instantiate(input, environment: parent.environment)
-                    base.insertArrangedViewController(viewController, stackIndex: insertIndex, parentViewController: parent)
+                    let viewController = Content.instantiate(input, environment: parentViewController.environment)
+                    base.insertArrangedViewController(viewController, stackIndex: insertIndex, parentViewController: parentViewController)
                     contents.append(viewController)
             }
         }
@@ -124,13 +125,13 @@ extension ContainerView {
     ///   - parent: Parent viewController
     /// - Returns: The container for viewController
     @discardableResult
-    public func makeContainer<ViewController, Parent>(for type: ViewController.Type, parent: Parent, with input: ViewController.Input)
+    public func makeContainer<ViewController, Parent>(for type: ViewController.Type, parentViewController: Parent, with input: ViewController.Input)
         -> Container<ViewController, Parent>
         where ViewController: UIViewController,
         ViewController: Instantiatable {
-            let container = Container<ViewController, Parent>(base: self, parent: parent)
-            let viewController = ViewController.instantiate(input, environment: parent.environment)
-            insertArrangedViewController(viewController, stackIndex: container.insertIndex, parentViewController: parent)
+            let container = Container<ViewController, Parent>(base: self, parentViewController: parentViewController)
+            let viewController = ViewController.instantiate(input, environment: parentViewController.environment)
+            insertArrangedViewController(viewController, stackIndex: container.insertIndex, parentViewController: parentViewController)
             container.contents = [viewController]
             return container
     }
@@ -142,11 +143,30 @@ extension ContainerView {
     ///   - type: The ViewController's type
     ///   - parent: Parent viewController
     /// - Returns: The container for ViewController type
+    public func makeContainer<ViewController, Parent>(for type: ViewController.Type, parentViewController: Parent)
+        -> Container<ViewController, Parent>
+        where ViewController: UIViewController,
+        ViewController: Instantiatable,
+        ViewController: Injectable {
+            return Container(base: self, parentViewController: parentViewController)
+    }
+}
+
+extension ContainerView {
+    @discardableResult
+    @available(*, deprecated, renamed: "makeContainer(for:parentViewController:with:)")
+    public func makeContainer<ViewController, Parent>(for type: ViewController.Type, parent: Parent, with input: ViewController.Input) -> Container<ViewController, Parent>
+        where ViewController: UIViewController,
+        ViewController: Instantiatable {
+            return makeContainer(for: type, parentViewController: parent, with: input)
+    }
+
+    @available(*, deprecated, renamed: "makeContainer(for:parentViewController:)")
     public func makeContainer<ViewController, Parent>(for type: ViewController.Type, parent: Parent)
         -> Container<ViewController, Parent>
         where ViewController: UIViewController,
         ViewController: Instantiatable,
         ViewController: Injectable {
-            return Container(base: self, parent: parent)
+            return makeContainer(for: type, parentViewController: parent)
     }
 }

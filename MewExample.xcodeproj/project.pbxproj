@@ -14,8 +14,8 @@
 		D243A17A2136E4C500B075CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D243A1782136E4C500B075CC /* LaunchScreen.storyboard */; };
 		D243A1962136E54E00B075CC /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A1882136E54E00B075CC /* MainViewController.xib */; };
 		D243A1972136E54E00B075CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A1892136E54E00B075CC /* MainViewController.swift */; };
-		D243A1982136E54E00B075CC /* ValueInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A18B2136E54E00B075CC /* ValueInputViewController.xib */; };
-		D243A1992136E54E00B075CC /* ValueInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A18C2136E54E00B075CC /* ValueInputViewController.swift */; };
+		D243A1982136E54E00B075CC /* ValueInputTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A18B2136E54E00B075CC /* ValueInputTableViewController.xib */; };
+		D243A1992136E54E00B075CC /* ValueInputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A18C2136E54E00B075CC /* ValueInputTableViewController.swift */; };
 		D243A19A2136E54E00B075CC /* PushButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A18E2136E54E00B075CC /* PushButtonViewController.xib */; };
 		D243A19B2136E54E00B075CC /* PushButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A18F2136E54E00B075CC /* PushButtonViewController.swift */; };
 		D243A19C2136E54E00B075CC /* ResultLabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A1912136E54E00B075CC /* ResultLabelViewController.xib */; };
@@ -23,6 +23,10 @@
 		D243A19E2136E54E00B075CC /* PresentButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D243A1942136E54E00B075CC /* PresentButtonViewController.xib */; };
 		D243A19F2136E54E00B075CC /* PresentButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A1952136E54E00B075CC /* PresentButtonViewController.swift */; };
 		D243A1A12136E55500B075CC /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243A1A02136E55500B075CC /* Environment.swift */; };
+		D2568E03214BE82E00FCA44A /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568E01214BE82E00FCA44A /* NumberViewController.swift */; };
+		D2568E04214BE82E00FCA44A /* NumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2568E02214BE82E00FCA44A /* NumberViewController.xib */; };
+		D2568E06214BEAD400FCA44A /* ValueInputCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2568E05214BEAD400FCA44A /* ValueInputCollectionViewController.swift */; };
+		D2568E08214BEB3000FCA44A /* ValueInputCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2568E07214BEB3000FCA44A /* ValueInputCollectionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,8 +51,8 @@
 		D243A17B2136E4C500B075CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D243A1882136E54E00B075CC /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		D243A1892136E54E00B075CC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		D243A18B2136E54E00B075CC /* ValueInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValueInputViewController.xib; sourceTree = "<group>"; };
-		D243A18C2136E54E00B075CC /* ValueInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueInputViewController.swift; sourceTree = "<group>"; };
+		D243A18B2136E54E00B075CC /* ValueInputTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValueInputTableViewController.xib; sourceTree = "<group>"; };
+		D243A18C2136E54E00B075CC /* ValueInputTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueInputTableViewController.swift; sourceTree = "<group>"; };
 		D243A18E2136E54E00B075CC /* PushButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushButtonViewController.xib; sourceTree = "<group>"; };
 		D243A18F2136E54E00B075CC /* PushButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButtonViewController.swift; sourceTree = "<group>"; };
 		D243A1912136E54E00B075CC /* ResultLabelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultLabelViewController.xib; sourceTree = "<group>"; };
@@ -57,6 +61,10 @@
 		D243A1952136E54E00B075CC /* PresentButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentButtonViewController.swift; sourceTree = "<group>"; };
 		D243A1A02136E55500B075CC /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D243A1A32136E57A00B075CC /* Mew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Mew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2568E01214BE82E00FCA44A /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		D2568E02214BE82E00FCA44A /* NumberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberViewController.xib; sourceTree = "<group>"; };
+		D2568E05214BEAD400FCA44A /* ValueInputCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueInputCollectionViewController.swift; sourceTree = "<group>"; };
+		D2568E07214BEB3000FCA44A /* ValueInputCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValueInputCollectionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +126,11 @@
 		D243A18A2136E54E00B075CC /* ValueInput */ = {
 			isa = PBXGroup;
 			children = (
-				D243A18B2136E54E00B075CC /* ValueInputViewController.xib */,
-				D243A18C2136E54E00B075CC /* ValueInputViewController.swift */,
+				D2568E00214BE81500FCA44A /* Number */,
+				D243A18B2136E54E00B075CC /* ValueInputTableViewController.xib */,
+				D243A18C2136E54E00B075CC /* ValueInputTableViewController.swift */,
+				D2568E07214BEB3000FCA44A /* ValueInputCollectionViewController.xib */,
+				D2568E05214BEAD400FCA44A /* ValueInputCollectionViewController.swift */,
 			);
 			path = ValueInput;
 			sourceTree = "<group>";
@@ -157,6 +168,15 @@
 				D243A1A32136E57A00B075CC /* Mew.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2568E00214BE81500FCA44A /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				D2568E01214BE82E00FCA44A /* NumberViewController.swift */,
+				D2568E02214BE82E00FCA44A /* NumberViewController.xib */,
+			);
+			path = Number;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,12 +239,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D243A19A2136E54E00B075CC /* PushButtonViewController.xib in Resources */,
+				D2568E04214BE82E00FCA44A /* NumberViewController.xib in Resources */,
 				D243A17A2136E4C500B075CC /* LaunchScreen.storyboard in Resources */,
-				D243A1982136E54E00B075CC /* ValueInputViewController.xib in Resources */,
+				D243A1982136E54E00B075CC /* ValueInputTableViewController.xib in Resources */,
 				D243A1962136E54E00B075CC /* MainViewController.xib in Resources */,
 				D243A19C2136E54E00B075CC /* ResultLabelViewController.xib in Resources */,
 				D243A1772136E4C500B075CC /* Assets.xcassets in Resources */,
 				D243A19E2136E54E00B075CC /* PresentButtonViewController.xib in Resources */,
+				D2568E08214BEB3000FCA44A /* ValueInputCollectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,9 +259,11 @@
 			files = (
 				D243A19F2136E54E00B075CC /* PresentButtonViewController.swift in Sources */,
 				D243A19B2136E54E00B075CC /* PushButtonViewController.swift in Sources */,
-				D243A1992136E54E00B075CC /* ValueInputViewController.swift in Sources */,
+				D243A1992136E54E00B075CC /* ValueInputTableViewController.swift in Sources */,
 				D243A1A12136E55500B075CC /* Environment.swift in Sources */,
 				D243A1702136E4C400B075CC /* AppDelegate.swift in Sources */,
+				D2568E06214BEAD400FCA44A /* ValueInputCollectionViewController.swift in Sources */,
+				D2568E03214BE82E00FCA44A /* NumberViewController.swift in Sources */,
 				D243A1972136E54E00B075CC /* MainViewController.swift in Sources */,
 				D243A19D2136E54E00B075CC /* ResultLabelViewController.swift in Sources */,
 			);
@@ -378,6 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U376YN5H26;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/MewExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -395,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U376YN5H26;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/MewExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

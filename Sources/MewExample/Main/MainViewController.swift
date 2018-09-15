@@ -9,8 +9,8 @@
 import UIKit
 import Mew
 
-/// Displays two buttons to push and present ValueInputViewController.
-/// Once a number is received from each ValueInputViewController, their addition is displayed in ResultLabel's ContainerView
+/// Displays two buttons to push and present ValueInputTableViewController.
+/// Once a number is received from each ValueInputTableViewController, their addition is displayed in ResultLabel's ContainerView
 final class MainViewController: UIViewController, Instantiatable {
     struct Model {
         var x: Int?
@@ -41,9 +41,9 @@ final class MainViewController: UIViewController, Instantiatable {
 
     @IBOutlet weak var containerView: ContainerView!
 
-    lazy var pushButtonContainer = self.containerView.makeContainer(for: PushButtonViewController.self, parent: self, with: ())
-    lazy var presentButtonContainer = self.containerView.makeContainer(for: PresentButtonViewController.self, parent: self, with: ())
-    lazy var resultContainer = self.containerView.makeContainer(for: ResultLabelViewController.self, parent: self)
+    lazy var pushButtonContainer = self.containerView.makeContainer(for: PushButtonViewController.self, parentViewController: self, with: ())
+    lazy var presentButtonContainer = self.containerView.makeContainer(for: PresentButtonViewController.self, parentViewController: self, with: ())
+    lazy var resultContainer = self.containerView.makeContainer(for: ResultLabelViewController.self, parentViewController: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
