@@ -19,6 +19,7 @@
 		D2568DF4214BCA3B00FCA44A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2568DF2214BCA3B00FCA44A /* Main.storyboard */; };
 		D2568DF6214BCA3C00FCA44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2568DF5214BCA3C00FCA44A /* Assets.xcassets */; };
 		D2568DF9214BCA3C00FCA44A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2568DF7214BCA3C00FCA44A /* LaunchScreen.storyboard */; };
+		D25C01C821620C0100935A18 /* BackwardCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25C01C721620C0100935A18 /* BackwardCompatibility.swift */; };
 		D279A3072136B34E007B045A /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3062136B34E007B045A /* Instantiatable.swift */; };
 		D279A30A2136B357007B045A /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3082136B357007B045A /* Injectable.swift */; };
 		D279A30B2136B357007B045A /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279A3092136B357007B045A /* Interactable.swift */; };
@@ -64,6 +65,7 @@
 		D2568DF5214BCA3C00FCA44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2568DF8214BCA3C00FCA44A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2568DFA214BCA3C00FCA44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D25C01C721620C0100935A18 /* BackwardCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackwardCompatibility.swift; sourceTree = "<group>"; };
 		D279A3062136B34E007B045A /* Instantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
 		D279A3082136B357007B045A /* Injectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
 		D279A3092136B357007B045A /* Interactable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactable.swift; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 			);
 			name = MewTestsApp;
 			path = Tests/MewTestsApp;
+			sourceTree = "<group>";
+		};
+		D25C01C621620BEC00935A18 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D25C01C721620C0100935A18 /* BackwardCompatibility.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		D279A3042136B31A007B045A /* Protocols */ = {
@@ -211,6 +221,7 @@
 		OBJ_8 /* Mew */ = {
 			isa = PBXGroup;
 			children = (
+				D25C01C621620BEC00935A18 /* Utils */,
 				D279A3042136B31A007B045A /* Protocols */,
 				D279A3052136B31F007B045A /* ContainerView */,
 				D2568DD7214BC00A00FCA44A /* Cells */,
@@ -288,7 +299,7 @@
 						ProvisioningStyle = Automatic;
 					};
 					"Mew::Mew" = {
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1000;
 					};
 					"Mew::MewTests" = {
 						TestTargetID = D2568DEB214BCA3B00FCA44A;
@@ -344,6 +355,7 @@
 			files = (
 				D2568DDF214BC3DC00FCA44A /* CollectionViewCell.swift in Sources */,
 				D2568DE1214BC51E00FCA44A /* CollectionReusableView.swift in Sources */,
+				D25C01C821620C0100935A18 /* BackwardCompatibility.swift in Sources */,
 				D279A3192136B726007B045A /* _ContainerInterfaceBuilderView.xib in Sources */,
 				D2568DDD214BC32D00FCA44A /* TableViewHeaderFooterView.swift in Sources */,
 				D279A30E2136B365007B045A /* ContainerView.swift in Sources */,
@@ -458,7 +470,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.ios.MewTestsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -514,7 +525,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.ios.MewTestsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -540,7 +550,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Mew;
 			};
 			name = Debug;
@@ -564,7 +573,6 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Mew;
 			};
 			name = Release;
@@ -588,6 +596,7 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -606,7 +615,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
 				TARGET_NAME = MewTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MewTestsApp.app/MewTestsApp";
 			};
@@ -626,7 +634,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
 				TARGET_NAME = MewTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MewTestsApp.app/MewTestsApp";
 			};
@@ -649,6 +656,7 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				USE_HEADERMAP = NO;
 			};
 			name = Release;

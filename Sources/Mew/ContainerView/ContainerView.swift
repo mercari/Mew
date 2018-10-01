@@ -38,27 +38,27 @@ public class ContainerView: UIStackView {
     /// When calling this function arbitrarily, arranged of ViewController by container is not guaranteed.
     public func addArrangedViewController(_ viewController: UIViewController, parentViewController: UIViewController) {
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
-        parentViewController.addChildViewController(viewController)
+        parentViewController.addChild(viewController)
         addArrangedSubview(viewController.view)
-        viewController.didMove(toParentViewController: parentViewController)
+        viewController.didMove(toParent: parentViewController)
     }
 
     /// The viewController will be inserted at the specified index as a childViewController of parentViewController that self (`ContainerView`)
     /// When calling this function arbitrarily, arranged of ViewController by container is not guaranteed.
     public func insertArrangedViewController(_ viewController: UIViewController, stackIndex: Int, parentViewController: UIViewController) {
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
-        parentViewController.addChildViewController(viewController)
+        parentViewController.addChild(viewController)
         insertArrangedSubview(viewController.view, at: stackIndex)
-        viewController.didMove(toParentViewController: parentViewController)
+        viewController.didMove(toParent: parentViewController)
     }
 
     /// The viewController will be removed from self (`ContainerView`)
     /// When calling this function arbitrarily, arranged of ViewController by container is not guaranteed.
     public func removeArrangedViewController(_ viewController: UIViewController) {
-        viewController.willMove(toParentViewController: nil)
+        viewController.willMove(toParent: nil)
         removeArrangedSubview(viewController.view)
         viewController.view.removeFromSuperview()
-        viewController.removeFromParentViewController()
+        viewController.removeFromParent()
     }
 }
 

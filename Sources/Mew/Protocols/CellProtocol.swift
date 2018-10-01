@@ -23,18 +23,18 @@ extension CellProtocol where Self: UIView  {
     internal func _willMove(to newSuperview: UIView?) {
         guard let contentViewController = contentViewController else { return }
         if newSuperview == nil {
-            contentViewController.willMove(toParentViewController: parentViewController)
+            contentViewController.willMove(toParent: parentViewController)
         } else {
-            parentViewController?.addChildViewController(contentViewController)
+            parentViewController?.addChild(contentViewController)
         }
     }
 
     internal func _didMoveToSuperview() {
         guard let contentViewController = contentViewController else { return }
         if superview == nil {
-            contentViewController.removeFromParentViewController()
+            contentViewController.removeFromParent()
         } else {
-            contentViewController.didMove(toParentViewController: parentViewController)
+            contentViewController.didMove(toParent: parentViewController)
         }
     }
 }
