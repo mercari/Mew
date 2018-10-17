@@ -1,0 +1,4 @@
+language: swift
+xcode_project: Mew.xcodeproj
+xcode_scheme: Mew
+xcode_destination: platform=iOS Simulator,OS=11.4,name=iPhone X
