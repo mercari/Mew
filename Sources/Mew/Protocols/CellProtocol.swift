@@ -86,10 +86,10 @@ public enum SizeConstraint: Equatable {
             let direction = (layout as? UICollectionViewFlowLayout)?.scrollDirection
             let inset = (layout as? UICollectionViewFlowLayout)?.sectionInset ?? UIEdgeInsets.zero
             var result: Calculated = (nil, nil)
-            if direction != UICollectionViewScrollDirection.vertical {
+            if direction != UICollectionView.ScrollDirection.vertical {
                 result.height = frame.height - inset.top - inset.bottom
             }
-            if direction != UICollectionViewScrollDirection.horizontal {
+            if direction != UICollectionView.ScrollDirection.horizontal {
                 result.width = frame.width - inset.left - inset.right
             }
             return result

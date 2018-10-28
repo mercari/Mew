@@ -37,6 +37,8 @@ extension UICollectionView {
     static var elementKindSectionFooter: String {
         return UICollectionElementKindSectionFooter
     }
+
+    typealias ScrollDirection = UICollectionViewScrollDirection
 }
 
 #endif
