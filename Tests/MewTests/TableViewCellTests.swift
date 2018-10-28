@@ -9,73 +9,6 @@
 import XCTest
 @testable import Mew
 
-final private class ViewController: UIViewController, Injectable, Instantiatable, Interactable {
-    typealias Input = Int
-    var parameter: Int
-    var handler: ((Int) -> ())?
-
-    let environment: Void
-
-    init(with value: Int, environment: Void) {
-        self.parameter = value
-        self.environment = environment
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func input(_ value: Int) {
-        self.parameter = value
-    }
-
-    func output(_ handler: ((Int) -> Void)?) {
-        self.handler = handler
-    }
-
-    func fire() {
-        handler?(parameter)
-    }
-}
-
-final private class TableViewController: UITableViewController, Instantiatable {
-    let environment: Void
-    var elements: [Int]
-
-    init(with input: [Int], environment: Void) {
-        self.environment = environment
-        self.elements = input
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        TableViewCell<ViewController>.register(to: tableView)
-        TableViewHeaderFooterView<ViewController>.register(to: tableView)
-    }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return elements.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return TableViewCell<ViewController>.dequeued(from: tableView, for: indexPath, input: elements[indexPath.row], parentViewController: self)
-    }
-
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return TableViewHeaderFooterView<ViewController>.dequeued(from: tableView, input: elements.count, parentViewController: self)
-    }
-}
-
 class TableViewCellTests: XCTestCase {
     func testDequeueTableViewCellWithViewController() {
         let tableViewController = TableViewController(with: [1, 2, 3], environment: ())
@@ -147,9 +80,55 @@ class TableViewCellTests: XCTestCase {
         self.wait(for: [exp], timeout: 5.0)
     }
 
+    func testAutosizingCell() {
+        let tableViewController = AutolayoutTableViewController(with: [], environment: ())
+        _ = tableViewController.view // load view
+        let data = [
+            [
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100)))
+            ],
+            [
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000)))
+            ],
+            [
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000)))
+            ]
+        ]
+        UIApplication.shared.keyWindow?.rootViewController = tableViewController
+        for expects in data {
+            tableViewController.input(expects)
+            let cells = tableViewController.tableView.visibleCells
+            zip(expects, cells).forEach { expect, cell in
+                XCTAssertEqual(cell.frame.size, CGSize(width: tableViewController.tableView.frame.width, height: 200 + expect.additionalHeight + 0.5))
+                XCTAssertEqual(cell.contentView.frame.size, CGSize(width: tableViewController.tableView.frame.width, height: 200 + expect.additionalHeight))
+                let childViewController = tableViewController.childViewControllers.first(where: { $0.view.superview == cell.contentView }) as! AutolayoutViewController
+                XCTAssertEqual(childViewController.view.frame.size, CGSize(width: min(tableViewController.tableView.frame.width, 200 + expect.additionalWidth), height: 200 + expect.additionalHeight))
+                XCTAssertFalse(cell.hasAmbiguousLayout)
+            }
+        }
+    }
+
     static var allTests = [
         ("testDequeueTableViewCellWithViewController", testDequeueTableViewCellWithViewController),
         ("testDequeueTableViewHeaderFooterWithViewController", testDequeueTableViewHeaderFooterWithViewController),
-        ("testViewControllerLifeCycle", testViewControllerLifeCycle)
+        ("testViewControllerLifeCycle", testViewControllerLifeCycle),
+        ("testAutosizingCell", testAutosizingCell)
     ]
 }

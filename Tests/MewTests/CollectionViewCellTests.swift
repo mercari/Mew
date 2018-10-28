@@ -9,80 +9,6 @@
 import XCTest
 @testable import Mew
 
-final private class ViewController: UIViewController, Injectable, Instantiatable, Interactable {
-    typealias Input = Int
-    var parameter: Int
-    var handler: ((Int) -> ())?
-
-    let environment: Void
-
-    init(with value: Int, environment: Void) {
-        self.parameter = value
-        self.environment = environment
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func input(_ value: Int) {
-        self.parameter = value
-    }
-
-    func output(_ handler: ((Int) -> Void)?) {
-        self.handler = handler
-    }
-
-    func fire() {
-        handler?(parameter)
-    }
-}
-
-final private class CollectionViewController: UICollectionViewController, Instantiatable, UICollectionViewDelegateFlowLayout {
-    let environment: Void
-    var elements: [Int]
-
-    init(with input: [Int], environment: Void) {
-        self.environment = environment
-        self.elements = input
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        CollectionViewCell<ViewController>.register(to: collectionView!)
-        CollectionReusableView<ViewController>.register(to: collectionView!, for: .header)
-        collectionViewLayout.invalidateLayout()
-        collectionView?.reloadData()
-        collectionView?.layoutIfNeeded()
-    }
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return elements.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return CollectionViewCell<ViewController>.dequeued(from: collectionView, for: indexPath, input: elements[indexPath.row], parentViewController: self)
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return CollectionReusableView<ViewController>.dequeued(from: collectionView, of: kind, for: indexPath, input: elements.count, parentViewController: self)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 44.0)
-    }
-}
-
 class CollectionViewCellTests: XCTestCase {
     func testDequeueCollectionViewCellWithViewController() {
         let collectionViewController = CollectionViewController(with: [1, 2, 3], environment: ())
@@ -148,9 +74,81 @@ class CollectionViewCellTests: XCTestCase {
         self.wait(for: [exp], timeout: 5.0)
     }
 
+    func testAutosizingCell() {
+        let data = [
+            [
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100)))
+            ],
+            [
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000)))
+            ],
+            [
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000)))
+            ]
+        ]
+        VERTICAL: do {
+            let collectionViewController = AutolayoutCollectionViewController(with: [], environment: ())
+            _ = collectionViewController.view // load view
+            (collectionViewController.collectionViewLayout as! UICollectionViewFlowLayout).scrollDirection = .vertical
+
+            UIApplication.shared.keyWindow?.rootViewController = collectionViewController
+            for expects in data {
+                collectionViewController.input(expects)
+                collectionViewController.collectionView!.layoutIfNeeded()
+                let cells = collectionViewController.collectionView!.indexPathsForVisibleItems.sorted().compactMap { collectionViewController.collectionView!.cellForItem(at: $0) }
+                zip(expects, cells).forEach { expect, cell in
+                    let expectedSize = CGSize(width: min(collectionViewController.collectionView!.frame.width - 40.0, 200 + expect.additionalWidth), height: 200 + expect.additionalHeight)
+                    XCTAssertEqual(cell.frame.size, expectedSize)
+                    XCTAssertEqual(cell.contentView.frame.size, expectedSize)
+                    let childViewController = collectionViewController.childViewControllers.first(where: { $0.view.superview == cell.contentView }) as! AutolayoutViewController
+                    XCTAssertEqual(childViewController.view.frame.size, expectedSize)
+                    XCTAssertFalse(cell.hasAmbiguousLayout)
+                }
+            }
+        }
+        HORIZONTAL: do {
+            let collectionViewController = AutolayoutCollectionViewController(with: [], environment: ())
+            _ = collectionViewController.view // load view
+            (collectionViewController.collectionViewLayout as! UICollectionViewFlowLayout).scrollDirection = .horizontal
+
+            UIApplication.shared.keyWindow?.rootViewController = collectionViewController
+            for expects in data {
+                collectionViewController.input(expects)
+                collectionViewController.collectionView!.layoutIfNeeded()
+                let cells = collectionViewController.collectionView!.indexPathsForVisibleItems.sorted().compactMap { collectionViewController.collectionView!.cellForItem(at: $0) }
+                zip(expects, cells).forEach { expect, cell in
+                    let expectedSize = CGSize(width: 200 + expect.additionalWidth, height: min(collectionViewController.collectionView!.frame.height - 40.0, 200 + expect.additionalHeight))
+                    XCTAssertEqual(cell.frame.size, expectedSize)
+                    XCTAssertEqual(cell.contentView.frame.size, expectedSize)
+                    let childViewController = collectionViewController.childViewControllers.first(where: { $0.view.superview == cell.contentView }) as! AutolayoutViewController
+                    XCTAssertEqual(childViewController.view.frame.size, expectedSize)
+                    XCTAssertFalse(cell.hasAmbiguousLayout)
+                }
+            }
+        }
+    }
+
     static var allTests = [
         ("testDequeueCollectionViewCellWithViewController", testDequeueCollectionViewCellWithViewController),
         ("testDequeueCollectionViewHeaderFooterWithViewController", testDequeueCollectionViewHeaderFooterWithViewController),
-        ("testViewControllerLifeCycle", testViewControllerLifeCycle)
+        ("testViewControllerLifeCycle", testViewControllerLifeCycle),
+        ("testAutosizingCell", testAutosizingCell)
     ]
 }
