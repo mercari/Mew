@@ -51,7 +51,9 @@ extension TableViewCellProtocol where Self: UIView {
         NSLayoutConstraint.activate(
             [
                 viewController.view.topAnchor.constraint(equalTo: contentView.topAnchor),
-                viewController.view.leftAnchor.constraint(equalTo: contentView.leftAnchor)
+                viewController.view.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+                viewController.view.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor),
+                viewController.view.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor)
             ] + [
                 viewController.view.rightAnchor.constraint(equalTo: contentView.rightAnchor),
                 viewController.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)

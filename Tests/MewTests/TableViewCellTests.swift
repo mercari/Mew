@@ -39,6 +39,88 @@ final private class ViewController: UIViewController, Injectable, Instantiatable
     }
 }
 
+final private class AutolayoutViewController: UIViewController, Injectable, Instantiatable {
+    struct Input {
+        var additionalWidth: CGFloat
+        var additionalHeight: CGFloat
+    }
+    var parameter: Input {
+        didSet {
+            updateLayout()
+        }
+    }
+
+    let environment: Void
+
+    init(with input: Input, environment: Void) {
+        self.parameter = input
+        self.environment = environment
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    var squareRequiredView: UIView!
+    var additionalWidthView: UIView!
+    var additionalHeightView: UIView!
+    var additionalWidthConstraint: NSLayoutConstraint!
+    var additionalHeightConstraint: NSLayoutConstraint!
+
+    /**
+     ```
+     ┌┬─┐
+     ├┴─┤
+     └──┘
+     ```
+     */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        squareRequiredView = UIView()
+        squareRequiredView.translatesAutoresizingMaskIntoConstraints = false
+        additionalWidthView = UIView()
+        additionalWidthView.translatesAutoresizingMaskIntoConstraints = false
+        additionalHeightView = UIView()
+        additionalHeightView.translatesAutoresizingMaskIntoConstraints = false
+        additionalWidthConstraint = additionalWidthView.widthAnchor.constraint(equalToConstant: 0)
+        additionalWidthConstraint.priority = .defaultHigh + 1
+        additionalHeightConstraint = additionalHeightView.heightAnchor.constraint(equalToConstant: 0)
+        view.addSubview(squareRequiredView)
+        view.addSubview(additionalWidthView)
+        view.addSubview(additionalHeightView)
+        NSLayoutConstraint.activate(
+            [
+                squareRequiredView.heightAnchor.constraint(equalToConstant: 200.0),
+                squareRequiredView.widthAnchor.constraint(equalToConstant: 200.0),
+                squareRequiredView.topAnchor.constraint(equalTo: view.topAnchor),
+                squareRequiredView.leftAnchor.constraint(equalTo: view.leftAnchor),
+                squareRequiredView.rightAnchor.constraint(equalTo: additionalWidthView.leftAnchor),
+                additionalWidthView.topAnchor.constraint(equalTo: view.topAnchor),
+                additionalWidthView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                additionalWidthView.rightAnchor.constraint(equalTo: view.rightAnchor),
+                additionalWidthView.widthAnchor.constraint(lessThanOrEqualToConstant: 1000.0),
+                additionalWidthConstraint,
+                squareRequiredView.bottomAnchor.constraint(equalTo: additionalHeightView.topAnchor),
+                additionalHeightView.leftAnchor.constraint(equalTo: view.leftAnchor),
+                additionalHeightView.rightAnchor.constraint(equalTo: view.rightAnchor),
+                additionalHeightView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                additionalHeightConstraint
+            ]
+        )
+        updateLayout()
+    }
+
+    func input(_ value: Input) {
+        self.parameter = value
+    }
+
+    func updateLayout() {
+        additionalWidthConstraint.constant = parameter.additionalWidth
+        additionalHeightConstraint.constant = parameter.additionalHeight
+    }
+}
+
 final private class TableViewController: UITableViewController, Instantiatable {
     let environment: Void
     var elements: [Int]
@@ -73,6 +155,43 @@ final private class TableViewController: UITableViewController, Instantiatable {
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return TableViewHeaderFooterView<ViewController>.dequeued(from: tableView, input: elements.count, parentViewController: self)
+    }
+}
+
+final private class AutolayoutTableViewController: UITableViewController, Instantiatable, Injectable {
+    let environment: Void
+    var elements: [AutolayoutViewController.Input]
+
+    init(with input: [AutolayoutViewController.Input], environment: Void) {
+        self.environment = environment
+        self.elements = input
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        TableViewCell<AutolayoutViewController>.register(to: tableView)
+    }
+
+    func input(_ input: [AutolayoutViewController.Input]) {
+        self.elements = input
+        tableView.reloadData()
+    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return elements.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return TableViewCell<AutolayoutViewController>.dequeued(from: tableView, for: indexPath, input: elements[indexPath.row], parentViewController: self)
     }
 }
 
@@ -147,9 +266,54 @@ class TableViewCellTests: XCTestCase {
         self.wait(for: [exp], timeout: 5.0)
     }
 
+    func testAutosizingCell() {
+        let tableViewController = AutolayoutTableViewController(with: [], environment: ())
+        _ = tableViewController.view // load view
+        let data = [
+            [
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<100)), additionalHeight: CGFloat(Int.random(in: 0..<100)))
+            ],
+            [
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 200..<1000)), additionalHeight: CGFloat(Int.random(in: 200..<1000)))
+            ],
+            [
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000))),
+                AutolayoutViewController.Input(additionalWidth: CGFloat(Int.random(in: 0..<1000)), additionalHeight: CGFloat(Int.random(in: 0..<1000)))
+            ]
+        ]
+        UIApplication.shared.keyWindow?.rootViewController = tableViewController
+        for expects in data {
+            tableViewController.input(expects)
+            let cells = tableViewController.tableView.visibleCells
+            zip(expects, cells).forEach { expect, cell in
+                XCTAssertEqual(cell.frame.size, CGSize(width: tableViewController.tableView.frame.width, height: 200 + expect.additionalHeight + 0.5))
+                XCTAssertEqual(cell.contentView.frame.size, CGSize(width: tableViewController.tableView.frame.width, height: 200 + expect.additionalHeight))
+                let childViewController = tableViewController.childViewControllers.first(where: { $0.view.superview == cell.contentView }) as! AutolayoutViewController
+                XCTAssertEqual(childViewController.view.frame.size, CGSize(width: min(tableViewController.tableView.frame.width, 200 + expect.additionalWidth), height: 200 + expect.additionalHeight))
+            }
+        }
+    }
+
     static var allTests = [
         ("testDequeueTableViewCellWithViewController", testDequeueTableViewCellWithViewController),
         ("testDequeueTableViewHeaderFooterWithViewController", testDequeueTableViewHeaderFooterWithViewController),
-        ("testViewControllerLifeCycle", testViewControllerLifeCycle)
+        ("testViewControllerLifeCycle", testViewControllerLifeCycle),
+        ("testAutosizingCell", testAutosizingCell)
     ]
 }
