@@ -68,6 +68,7 @@ public enum SizeConstraint: Equatable {
     case maximumSize(CGSize)
     case maximumWidth(CGFloat)
     case maximumHeight(CGFloat)
+    /// Note: Support UICollectionViewFlowLayout sizing. Not yet UICollectionViewDelegateFlowLayout.
     case automaticDimension(UICollectionViewLayout)
 
     typealias Calculated = (width: CGFloat?, height: CGFloat?)
@@ -82,13 +83,14 @@ public enum SizeConstraint: Equatable {
             return (nil, height)
         case .automaticDimension(let layout):
             let frame = layout.collectionView?.frame ?? .zero
-            let size = layout.collectionViewContentSize
+            let direction = (layout as? UICollectionViewFlowLayout)?.scrollDirection
+            let inset = (layout as? UICollectionViewFlowLayout)?.sectionInset ?? UIEdgeInsets.zero
             var result: Calculated = (nil, nil)
-            if frame.height >= size.height {
-                result.height = frame.height
+            if direction != UICollectionViewScrollDirection.vertical {
+                result.height = frame.height - inset.top - inset.bottom
             }
-            if frame.width >= size.width {
-                result.width = frame.width
+            if direction != UICollectionViewScrollDirection.horizontal {
+                result.width = frame.width - inset.left - inset.right
             }
             return result
         }
